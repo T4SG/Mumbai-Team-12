@@ -2,9 +2,15 @@
 <html>
 <head>
 	<title>Algorithm</title>
-	
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container">
+<center><h2>School Ranking</h2></center>
 <?php 
 error_reporting(0);
 $username = "root";
@@ -86,6 +92,16 @@ $id = 0;
 			$res[4]=$info[4]*$info1[6];
 			$res[5]=$info[5]*$info1[7];
 			$res[6]=$info[6]*$info1[8];
+			/*echo $res[0]."<br>";
+			echo $res[1]."<br>";
+			echo $res[2]."<br>";
+			echo $res[3]."<br>";
+			echo $res[4]."<br>";
+			echo $res[5]."<br>";
+			echo $res[6]."<br>";
+			echo "sum";*/
+			
+			
 			
 			//echo $info1[11];
 
@@ -114,7 +130,7 @@ sort($rank);
 $c=count($rank);
 //echo $c;
 $n = 1;
-echo "<table border=1>";
+echo "<table border=1 class='table table-striped'>";
 echo "<th>Rank</th><th>score</th><th>School Name</th><th>Number ofchildren affected</th><th>Cost</th>";
 while($c > 0)
 {  echo "<tr><td>".$n."</td>";	
@@ -152,6 +168,6 @@ while($c > 0)
 
 
 ?>
-
+</div>
 </body>
 </html>
