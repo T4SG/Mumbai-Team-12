@@ -58,7 +58,9 @@ mysql_close($conn);
 else
 {
    ?>
-   
+
+<div id="header">  <button type="button" align="right" id="addpartner">Add a new partner</button></div>
+ <div style="float:none"></div>  
 <form name="weightage" method="post" action="<?php $_PHP_SELF ?>" role="form">
 
 <br><br>
