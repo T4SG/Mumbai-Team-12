@@ -7,7 +7,7 @@
 <body>
 
 <?php
-echo "hii";
+
 if(isset($_POST['submit']))
 {
 	echo "hii";
@@ -20,7 +20,7 @@ if(! $conn )
 {
   die('Could not connect: ' . mysql_error());
 }
-echo "hii";
+
 
 $db=mysql_select_db('school_selection');
 	if(!$db)
@@ -47,7 +47,7 @@ else
 		echo "data entered successsfully";
 		
 	}
-echo "Entered data successfully\n";	   
+
  
 mysql_close($conn);
 }

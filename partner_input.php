@@ -42,7 +42,7 @@ $db=mysql_select_db('school_selection');
    $txt_pi = addslashes ($_POST['txt_pi']);
    
    $sql = "INSERT INTO input ".
-       "(Child_count,Project_cost,Damage,Community_participation,Maintainence,Disaster_resistance,Principal_collaboration,Computer_reliability,PartnerID,School_name) ".
+       "(Child_count,Project_cost,Damage,Community_participation,Maintenance,Disaster_resistance,Principal_collaboration,Computer_reliability,PartnerID,School_name) ".
        "VALUES('$txt_nos','$txt_cost','$txt_dp','$txt_cp','$txt_mt','$txt_dr','$txt_pc','$txt_cr','$txt_pi','$txt_name' )";
    $retval = mysql_query( $sql, $conn );
 if(! $retval )
@@ -64,7 +64,7 @@ else
 
 
 
-<form name="lp_home" action="partner.php">
+<form name="lp_home" action="<?php $_PHP_SELF ?>" method="POST">
 School Name :<input type="text" name="txt_name" value=""><br>
 Number of Students : <input type="text" name="txt_nos" value=""><br>
 Cost : <input type="text" name="txt_cost" value=""><br>
