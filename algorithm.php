@@ -91,6 +91,7 @@ echo $res[5];
 echo $res[6];
 $sum = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]+$res[6];
 echo "sum is" .$sum;
+array_push($rank, $sum);
 /*for($i = 0; $i < 7; $i++)
 		{ echo "hii".$res[i];
 			$sum = $res[i] + $sum;
@@ -98,14 +99,24 @@ echo "sum is" .$sum;
 		}
 		echo "sum is" .$sum;*/
 }
+
 		
 		
  
-	array_push($rank, $sum);
+	
 				
 			}
-		
-echo "rank is".$rank[0];
+sort($rank);
+$c=count($rank);
+//echo $c;
+while($c > 0)
+{
+	echo "rank is" . $rank[$c-1];
+	$c--;
+}
+
+	
+
 				
 	
 	
