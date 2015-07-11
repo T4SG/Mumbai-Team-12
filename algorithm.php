@@ -66,7 +66,9 @@ $info1=mysql_fetch_array($result1);echo $info1;*/
 $res = array();
 $rank=array();
 $school = array();
-echo $rank;
+$children = array();
+$cost = array();
+//echo $rank;
 $info=mysql_fetch_array($result);
 $id = 0;
 	if(mysql_num_rows($result1) > 0)
@@ -85,18 +87,14 @@ $id = 0;
 			$res[5]=$info[5]*$info1[7];
 			$res[6]=$info[6]*$info1[8];
 			
-			echo $info1[11];
-echo $res[0];
-echo $res[1];
-echo $res[2];
-echo $res[3];
-echo $res[4];
-echo $res[5];
-echo $res[6];
+			//echo $info1[11];
+
 $sum = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]+$res[6];
-echo "sum is" .$sum;
+//echo "sum is" .$sum;
 array_push($rank, array($sum,$id));
 array_push($school, array($info1[11],$id));
+array_push($children, array($info1[0], $id)	);
+array_push($cost,array($info1[1],$id));
 $id++;
 /*for($i = 0; $i < 7; $i++)
 		{ echo "hii".$res[i];
@@ -115,17 +113,24 @@ $id++;
 sort($rank);
 $c=count($rank);
 //echo $c;
+$n = 1;
+echo "<table border=1>";
+echo "<th>Rank</th><th>score</th><th>School Name</th><th>Number ofchildren affected</th><th>Cost</th>";
 while($c > 0)
-{
-	echo "rank is" . $rank[$c-1][0];
+{  echo "<tr><td>".$n."</td>";	
+	echo "<td>" . $rank[$c-1][0]."</td>";
 	$c1 = count($school);
 	while($school[$c1-1][1]!=$rank[$c-1][1])
 	{
 		$c1--;
 		}
-	echo $school[$c1-1][0];
+	
+	echo "<td>".$school[$c1-1][0]."</td>";
+	echo "<td>".$children[$c1 - 1][0]."</td>";
+	echo "<td>$ ".$cost[$c1 - 1][0]."</td></tr>";
 	$c--;
-}
+	$n++;
+}echo "</table>"
 
 	
 
