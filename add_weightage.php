@@ -64,43 +64,50 @@ else
 <form name="weightage" method="post" action="<?php $_PHP_SELF ?>" role="form">
 
 <br><br>
-<div id="buffer">ghjk</div>
 
-
+<center>
+<div id="container_w" >
 <div class ="factor"><h2>Weightage<h2> </div>
 <br>
-Impact on the number of children :-
+<br>
+<br>
+
+<div id="factor_wrap">
+Impact on the number of children :-<br><br>
 
 
 <input type="range" name="rd_impact_ch" min="0" max="10" value="0" oninput="amount1.value=rd_impact_ch.value" class="form-control">
-<output name="amount1" for="rd_impact_ch">0 </output>  <br>
-Damage proportion of the building :-
+<output name="amount1" for="rd_impact_ch">0 </output>  <br><br><br>
+Damage proportion of the building :-<br><br>
 <input type="range" name="rd_damage_prop" min="0" max="10" value="0" oninput="amount2.value=rd_damage_prop.value" class="form-control">
 <output name="amount2" for="rd_damage_prop">0 </output>
-<br>
-Community participation :-
+<br><br><br>
+Community participation :-<br><br>
 <input type="range" name="rd_com_part" min="0" max="10" value="0" oninput="amount3.value=rd_com_part.value" class="form-control">
 <output name="amount3" for="rd_com_part">0 </output>
-<br>
-Future maintenance :-
+<br><br><br>
+Future maintenance :-<br><br>
 <input type="range" name="rd_fut_mt" min="0" max="10" value="0" oninput="amount4.value=rd_fut_mt.value" class="form-control">
 <output name="amount4" for="rd_fut_mt">0 </output>
-<br>
-Disaster resistance :-
+<br><br><br>
+Disaster resistance :-<br><br>
 <input type="range" name="rd_dis_r" min="0" max="10" value="0" oninput="amount4.value=rd_dis_r.value" class="form-control">
 <output name="amount4" for="rd_dis_r">0 </output>
-<br>
-Principal Co-operation :-
+<br><br><br>
+Principal Co-operation :-<br><br>
 <input type="range" name="rd_prin_c" min="0" max="10" value="0" oninput="amount4.value=rd_prin_c.value" class="form-control">
 <output name="amount4" for="rd_prin_c">0 </output>
-<br><br>
-Computer reliabilty :-
+<br><br><br>
+Computer reliabilty :-<br><br>
 <input type="range" name="rd_comp_r" min="0" max="10" value="0" oninput="amount4.value=rd_comp_r.value" class="form-control">
 <output name="amount4" for="rd_comp_r">0 </output>
-<br>
-<input type="submit" name="submit" value="Enter" class="btn btn-default">
+<br><br><br>
+<centre><input id="fin" type="submit" name="submit" value="Rank Schools" class="btn btn-default"></centre>
 </form>
 
+</div>
+</div>
+</center>
 <?php
 }
 ?>
