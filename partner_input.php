@@ -32,7 +32,9 @@ $db=mysql_select_db('school_selection');
 //{
    $txt_name = addslashes ($_POST['txt_name']);
    $txt_nos = addslashes ($_POST['txt_nos']);
+  
    $txt_cost = addslashes ($_POST['txt_cost']);
+    $txt_bp = $txt_nos / $txt_cost;
    $txt_dp = addslashes ($_POST['txt_dp']);
    $txt_cp = addslashes ($_POST['txt_cp']);
    $txt_mt = addslashes ($_POST['txt_mt']);
@@ -42,23 +44,26 @@ $db=mysql_select_db('school_selection');
    $txt_pi = addslashes ($_POST['txt_pi']);
    
    $sql = "INSERT INTO input ".
-       "(Child_count,Project_cost,Damage,Community_participation,Maintenance,Disaster_resistance,Principal_collaboration,Computer_reliability,PartnerID,School_name) ".
-       "VALUES('$txt_nos','$txt_cost','$txt_dp','$txt_cp','$txt_mt','$txt_dr','$txt_pc','$txt_cr','$txt_pi','$txt_name' )";
+       "(Child_count,Project_cost,Beneficiary_percentage,Damage,Community_participation,Maintenance,Disaster_resistance,Principal_collaboration,Computer_reliability,PartnerID,School_name) ".
+       "VALUES('$txt_nos','$txt_cost','$txt_bp','$txt_dp','$txt_cp','$txt_mt','$txt_dr','$txt_pc','$txt_cr','$txt_pi','$txt_name' )";
    $retval = mysql_query( $sql, $conn );
 if(! $retval )
 {
   die('Could not enter data: ' . mysql_error());
 }
-	{
-		echo "data entered successsfully";
+	else{?>
+	<script type="text/javascript">
+	alert("Data entered successfully");
+	</script>
+	
+		<?php echo "data entered successsfully";
 		
 	}
 
  
 mysql_close($conn);
 }
-else
-{
+
    ?>
 
 
@@ -77,8 +82,6 @@ Computer Reliability : <input type="text" name="txt_cr" value=""><br>
 Partner Id : <input type="text" name="txt_pi" value=""><br>
 <input type="submit" name="submit" value="Enter">
 </form>
-<?php
-}
-?>
+
 </body>
 </html>
