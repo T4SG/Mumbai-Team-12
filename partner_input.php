@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Partner</title>
-	
+	  <link rel="stylesheet" href="add_weightage_style.css">
+
 </head>
 <body>
 
@@ -70,18 +71,42 @@ mysql_close($conn);
 
 
 <form name="lp_home" action="<?php $_PHP_SELF ?>" method="POST">
-School Name :<input type="text" name="txt_name" value=""><br>
-Number of Students : <input type="text" name="txt_nos" value=""><br>
-Cost : <input type="text" name="txt_cost" value=""><br>
-Damage proportion :  <input type="text" name="txt_dp" value=""><br>
-Community participation :   <input type="text" name="txt_cp" value=""><br>
-Maintenance : <input type="text" name="txt_mt" value=""><br>
-Disaster Resisance :  <input type="text" name="txt_dr" value=""><br>
-Principal Co-operation : <input type="text" name="txt_pc" value=""><br>
-Computer Reliability : <input type="text" name="txt_cr" value=""><br>
-Partner Id : <input type="text" name="txt_pi" value=""><br>
-<input type="submit" name="submit" value="Enter">
-</form>
 
+<br><br>
+
+<center>
+<div id="container_w" >
+<div class ="factor"><centre><h1 id="h1" >Factors<h1></centre> </div>
+<br>
+<br>
+<br>
+
+<div id="factor_wrap">
+School Name :-<br><br><input type="text" name="txt_name" value=""><br><br><br>
+Number of Students  :- <br><br> <input type="text" name="txt_nos" value=""><br><br><br>
+Cost :- <br><br><input type="text" name="txt_cost" value=""><br><br><br>
+Damage proportion :-<br><br><input type="range" name="txt_dp" min="0" max="10" value="0" oninput="damage.value=txt_dp.value" class="form-control"> 
+<output name="damage" for="txt_dp">0 </output> <br><br><br>
+
+Community participation  :-<br><br><input type="range" name="txt_cp" min="0" max="10" value="0" oninput="community.value=txt_cp.value" class="form-control"> 
+<output name="community" for="txt_cp">0 </output><br><br><br>
+
+Maintenance :- <br><br><input type="range" name="txt_mt" value="0" min="0" max="10" value="0" oninput="maintenance.value=txt_mt.value" class="form-control"> 
+<output name="maintenance" for="txt_mt">0 </output><br><br><br>
+Disaster Resisance :  <br><br><input type="range" name="txt_dr" value="0" min="0" max="10" value="0" oninput="disaster.value=txt_dr.value" class="form-control"> 
+<output name="disaster" for="txt_dr">0 </output><br><br><br>
+
+Principal Co-operation :- <br><br><input type="range" name="txt_pc" value="0" min="0" max="10" value="0" oninput="principal.value=txt_pc.value" class="form-control"> 
+<output name="principal" for="txt_pc">0 </output><br><br><br>
+
+Computer Reliability :- <br><br><input type="range" name="txt_cr" value="0" min="0" max="10" value="0" oninput="computer.value=txt_cr.value" class="form-control"> 
+<output name="computer" for="txt_cr">0 </output><br><br><br>
+
+Partner Id :-<br><br> <input type="text" name="txt_pi" value=""><br><br><br>
+
+<input id="fin" type="submit" name="submit" value="Enter"><br>
+</div>
+</center>
+</div>
 </body>
 </html>

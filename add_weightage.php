@@ -67,7 +67,7 @@ else
 
 <center>
 <div id="container_w" >
-<div class ="factor"><h2>Weightage<h2> </div>
+<div class ="factor"><h1>Weightage<h1> </div>
 <br>
 <br>
 <br>
