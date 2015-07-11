@@ -64,9 +64,10 @@ else
 <form name="weightage" method="post" action="<?php $_PHP_SELF ?>" role="form">
 
 <br><br>
+<div id="buffer">ghjk</div>
 
 
-<div class ="factor">Weightage:- </div>
+<div class ="factor"><h2>Weightage<h2> </div>
 <br>
 Impact on the number of children :-
 
