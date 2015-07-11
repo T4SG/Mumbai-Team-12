@@ -64,7 +64,7 @@ echo $res[0];
 }
 $info1=mysql_fetch_array($result1);echo $info1;*/
 $res = array();
-$rank=array();$rank->append(0);
+$rank=array();
 echo $rank;
 $info=mysql_fetch_array($result); 
 	if(mysql_num_rows($result1) > 0)
@@ -89,17 +89,23 @@ echo $res[3];
 echo $res[4];
 echo $res[5];
 echo $res[6];
-$sum = 0;
-		for($i = 0; $i < 7; $i++)
-		{
+$sum = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]+$res[6];
+echo "sum is" .$sum;
+/*for($i = 0; $i < 7; $i++)
+		{ echo "hii".$res[i];
 			$sum = $res[i] + $sum;
+			
 		}
+		echo "sum is" .$sum;*/
+}
+		
+		
  
-	$rank = res;
+	array_push($rank, $sum);
 				
 			}
-		}
-	
+		
+echo "rank is".$rank[0];
 				
 	
 	
