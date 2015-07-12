@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
 	
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'code4good';
+$dbpass = '';
 
 $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 if(! $conn )

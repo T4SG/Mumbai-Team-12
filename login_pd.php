@@ -20,7 +20,7 @@ if(isset($_POST['pd_submit']))
 {
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'code4good';
 
 $name1 =  ($_POST['pd_name']);
    $pwd2 =  ($_POST['pd_password']);
