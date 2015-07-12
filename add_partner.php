@@ -56,11 +56,23 @@ else
    ?>
    
 <form  method="post" action="<?php $_PHP_SELF ?>">
-	Partner Name : <input type="text" name="partner_name" value=""><br>
-	Password : <input type="password" name="partner_password" value=""><br>
-	Credits :  <input type="text" name="partner_credits" value=""><br>
-	Area : <input type="text" name="partner_area" value=""><br>
-		<input type="submit" name="submit" value="Enter">
+
+<br><br>
+<center>
+<div id="container_w" >
+<div class ="factor"><centre><h1 id="h1" >Partners<h1></centre> </div>
+<br>
+<br>
+<br>
+<div id="factor_wrap">
+	Partner Name :-<br><br> <input type="text" name="partner_name" value=""><br><br><br>
+	Password :- <br><br> <input type="password" name="partner_password" value=""><br><br><br>
+	Credits  :- <br><br> <input type="text" name="partner_credits" value=""><br><br><br>
+	Area :- <br><br> <input type="text" name="partner_area" value=""><br><br><br>
+		<input type="submit" name="submit" value="Enter"><br>
+</div>
+</center>
+</div>
 </form>
 
 <?php
