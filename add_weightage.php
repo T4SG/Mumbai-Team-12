@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
 {
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'code4good';
 
 $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 if(! $conn )
@@ -48,19 +48,22 @@ if(! $retval )
 }
 else
 	{
-		echo "data entered successsfully";
+		//echo "data entered successsfully";
+		?>
+		<script type="text/javascript">
+		window.alert("Data Entered Successfully");
+		</script>
 		
-	}
+	<?php  }
  
  
 mysql_close($conn);
 }
-else
-{
-   ?>
 
-<div id="header">  <button type="button" align="right" id="addpartner">Add a new partner</button></div>
- <div style="float:none"></div>  
+   ?>
+<?php include 'navbar.php';?>
+<!--<div id="header">  <button type="button" align="right" id="addpartner">Add a new partner</button></div>
+ <div style="float:none"></div>-->  
 <form name="weightage" method="post" action="<?php $_PHP_SELF ?>" role="form">
 
 <br><br>
@@ -108,9 +111,7 @@ Computer reliabilty :-<br><br>
 </div>
 </div>
 </center>
-<?php
-}
-?>
+
   <script language="javascript" type="text/javascript" src="add_weightage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

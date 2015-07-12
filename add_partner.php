@@ -5,15 +5,15 @@
 	
 </head>
 <body>
-
+<?php include 'navbar.php';?>
 <?php
 
 if(isset($_POST['submit']))
 {
-	echo "hii";
+	//echo "hii";
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'code4good';
 
 $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 if(! $conn )
@@ -44,7 +44,13 @@ if(! $retval )
 }
 else
 	{
-		echo "data entered successsfully";
+		//echo "data entered successsfully";
+		?>
+		<script type="text/javascript">
+		window.alert("Data Enterd Successfully");
+		</script>
+		
+	<?php  
 		
 	}
 

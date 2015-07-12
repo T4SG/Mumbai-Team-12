@@ -33,7 +33,7 @@ $name =  ($_POST['p_name']);
    //$pwd2 =  ($_POST['password2']);
    //echo $uid;
    $sql="SELECT * FROM users WHERE  Username='$name' and Password='$pwd1' ";
-   $retval = mysql_query($sql,$conn);
+   $retval = mysql_query($sql);
 if(!$retval) {
    $err=mysql_error();
    print $err;
@@ -42,9 +42,10 @@ if(!$retval) {
     }
 
     else{
-	
+	/*session_start();
+	$_SESSION['username'] = $name;*/
        //print "successfully logged into system.";
-header('Location: http://localhost/cfg/add_weightage.php');
+header('Location: http://localhost/cfg/partner_input.php');
        //proceed to perform website’s functionality – e.g. present information to the user
     }
 	}

@@ -31,55 +31,7 @@
 </style>
 </head>
 <body>
-<?php
 
-//$uid =  ($_POST['id']);
-if(isset($_POST['pd_submit']))
-{
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$name1 =  ($_POST['pd_name']);
-   $pwd2 =  ($_POST['pd_password']);
-   //$pwd2 =  ($_POST['password2']);
-   //echo $uid;
-   print "hi";
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-if(! $conn )
-{
-  die('Could not connect: ' . mysql_error());
-}	
-$db=mysql_select_db('school_selection',$conn);
-if(!$db)
-{
-echo "error";
-}
-   $sql1="SELECT * FROM pdlogin WHERE  PDUsername='$name1' and PDPassword='$pwd2' ";
-   $retval1 = mysql_query($sql1);
-   print $retval1;
-if(!$retval1) {
-   $err=mysql_error();
-   print $err;?>
-   <script>
-   window.alert($err);   //echo "hii";
-   //exit();
-   </script>
-   <?php }
-	
-
-    else{?>
-	<script>
-   window.alert("print");   //echo "hii";
-   //exit();
-   </script>
-	
-      <?php print "successfully logged into system.";
-header('Location: http://localhost/cfg/algorithm.php');
-       //proceed to perform website’s functionality – e.g. present information to the user
-    }
-mysql_close($conn);
-}
-?>
 <canvas id="myCanvas" width="950" height="100" style="border:4px solid WHITE align:middle ; " class="center">
 Your browser does not support the HTML5 canvas tag.</canvas>
 

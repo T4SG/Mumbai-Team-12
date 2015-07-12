@@ -9,12 +9,13 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php include 'navbar.php';?>
 <div class="container">
 <center><h2>School Ranking</h2></center>
 <?php 
 error_reporting(0);
 $username = "root";
-$password = "";
+$password = "code4good";
 $hostname = "localhost"; 
 
 //connection to the database
@@ -101,14 +102,17 @@ $id = 0;
 			echo $res[6]."<br>";
 			echo "sum";*/
 			
-			
+			$credits = mysql_query("SELECT credits
+FROM  users
+WHERE Username = '".$info[9]."'");
+			//echo $credits;
 			
 			//echo $info1[11];
 
-$sum = $res[0]+$res[1]+$res[2]+$res[3]+$res[4]+$res[6];
-//echo "sum is" .$sum;
+$sum = $res[0] + $res[1] + $res[2] + $res[3] + $res[4] + $res[6] + $credits;
+
 array_push($rank, array($sum,$id));
-array_push($school, array($info1[11],$id));
+array_push($school, array($info1[12],$id));
 array_push($children, array($info1[0], $id)	);
 array_push($cost,array($info1[1],$id));
 $id++;
