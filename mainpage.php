@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="Scripts/jQuery/jquery.mobile-1.4.2.min.js"></script>
 		</head>
 		<body>
-		<?php
+		<?php 
 if(isset($_POST['submit']))
 {
 $dbhost = 'localhost';
@@ -21,84 +21,89 @@ if(! $conn )
 {
   die('Could not connect: ' . mysql_error());
 }	
-mysql_select_db('school_selection',$conn);
+$db=mysql_select_db('school_selection',$conn);
+if(!$db)
+{
+echo "error";
+}
 
 //$uid =  ($_POST['id']);
 $name =  ($_POST['p_name']);
-   $pwd1 =  ($_POST['p_password1']);
+   $pwd1 =  ($_POST['p_password']);
    //$pwd2 =  ($_POST['password2']);
    //echo $uid;
    $sql="SELECT * FROM users WHERE  Username='$name' and Password='$pwd1' ";
-   $retval = mysql_query($sql);
+   $retval = mysql_query($sql,$conn);
 if(!$retval) {
    $err=mysql_error();
    print $err;
    //echo "hii";
    exit();
     }
-else
-    if(mysql_affected_rows()==0){
-       print "no such login in the system. please enter correct username try again.";
-       exit();
-    }
+
     else{
-	session_start();
-	$_SESSION['username'] = $name;
+	
        //print "successfully logged into system.";
-header('Location: localhost/cfg/add_partner.php');
+header('Location: http://localhost/cfg/add_weightage.php');
        //proceed to perform website’s functionality – e.g. present information to the user
     }
+	}
 mysql_close($conn);
-}
+?>
 <?php
+
+//$uid =  ($_POST['id']);
 if(isset($_POST['pd_submit']))
 {
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = '';
-$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+
+$name1 =  ($_POST['pd_name']);
+   $pwd2 =  ($_POST['pd_password']);
+   //$pwd2 =  ($_POST['password2']);
+   //echo $uid;
+   print "hi";
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 if(! $conn )
 {
   die('Could not connect: ' . mysql_error());
 }	
-mysql_select_db('school_selection',$conn);
-
-//$uid =  ($_POST['id']);
-$name1 =  ($_POST['p_name']);
-   $pwd2 =  ($_POST['p_password1']);
-   //$pwd2 =  ($_POST['password2']);
-   //echo $uid;
-   $sql1="SELECT * FROM users WHERE  PDUsername='$name1' and PDPassword='$pwd2' ";
+$db=mysql_select_db('school_selection',$conn);
+if(!$db)
+{
+echo "error";
+}
+   $sql1="SELECT * FROM pdlogin WHERE  PDUsername='$name1' and PDPassword='$pwd2' ";
    $retval1 = mysql_query($sql1);
+   print $retval1;
 if(!$retval1) {
    $err=mysql_error();
-   print $err;
-   //echo "hii";
-   exit();
-    }
-else
-    if(mysql_affected_rows()==0){
-       print "no such login in the system. please enter correct username try again.";
-       exit();
-    }
-    else{
+   print $err;?>
+   <script>
+   window.alert($err);   //echo "hii";
+   //exit();
+   </script>
+   <?php }
 	
-       print "successfully logged into system.";
-header('Location: localhost/cfg/add_weightage.php');
+
+    else{?>
+	<script>
+   window.alert("print");   //echo "hii";
+   //exit();
+   </script>
+	
+      <?php print "successfully logged into system.";
+header('Location: http://localhost/cfg/algorithm.php');
        //proceed to perform website’s functionality – e.g. present information to the user
     }
 mysql_close($conn);
 }
 ?>
+
+
 		<div data-role="page" id="pageone">
   <div data-role="header" data-theme="b">
-<<<<<<< HEAD
-    <h1>HAPPY HEARTS FUNDS</h1>
-  </div>
-
-  <div  data-role="main" id ="frontpage" class="ui-content" >
-    <img src="Photo-of-Students-in-front-of-school1-e1415390920918-1170x390.jpg">
-=======
   			 <a href="#pagetwo"  data-transition="slide" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-arrow-l  ">
                     Program Director</a>
 			<a href="#pagethree"  data-transition="slide" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-b ui-btn-icon-right ui-icon-arrow-r  ">
@@ -108,15 +113,11 @@ mysql_close($conn);
 
   <div data-role="main" class="ui-content">
     <img src="Photo-of-Students-in-front-of-school1-e1415390920918-1170x390.jpg" height="100%" width="100%" >
->>>>>>> 86fcea516b2b5b01370902be8f5ca24377a1ab4d
   </div>
 
   <div data-role="footer" data-theme="b">
     <h1>EVERY DONATION MAKES A DIFFERENCE. JOIN US TO HELP CHILDREN AROUND THE WORLD RIGHT NOW!</h1>
   </div>
-<<<<<<< HEAD
-</div> 
-=======
 </div>
 
 
@@ -128,25 +129,27 @@ mysql_close($conn);
   </div>
   
  <div data-role="main" class="ui-content">
-  <form method="post" action="demoform.asp">
+  <form method="post" action="<?php $_PHP_SELF ?>" >
       <label for="fname">Email</label>
       <input type="text" name="pd_name" id="email" placeholder="Email...">
 	  <label for="Passd">Password</label>
       <input type="password" name="pd_password" id="passw" placeholder="Password...">
-    </form>
+    
                     
     
-  </div>
+  
   <center>
   
-   <input type="submit" onclick=""  data-inline="true" class="ui-btn-center" value="Submit" name="pd_submit">
+   <input type="submit" data-inline="true" class="ui-btn-center" value="Submit" name="pd_submit">
    </center>
+   </form>
+   </div>
    
   		 	
     
   </div>
   
-  <div data-role="page" id="pagethree">
+ <div data-role="page" id="pagethree">
   <div data-role="header" data-theme="b">
   <a href="#pageone"  data-transition="slide" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-arrow-l  ">
                     go back</a>
@@ -154,24 +157,24 @@ mysql_close($conn);
   </div>
   
  <div data-role="main" class="ui-content">
-  <form method="post" action="demoform.asp">
+  <form method="post" action="<?php $_PHP_SELF ?>" >
       <label for="fname">Email</label>
-      <input type="text" name="p_name" id="email" placeholder="Email...">
+      <input type="text" name="p_name"  placeholder="Email...">
 	  <label for="Passd">Password</label>
-      <input type="password" name="P_password" id="passw" placeholder="Password...">
+      <input type="password" name="p_password"  placeholder="Password...">
+	  <center>
+   <input type="submit"   data-inline="true"  value="Submit" name="submit">
+   
+   </center>
     </form>
                     
     
   </div>
-  <center>
-   <input type="submit" onclick=""  data-inline="true"  value="Submit" name="submit">
-   
-   </center>
+  </div> 
   		 	
     
-  </div>
+  
 
->>>>>>> 86fcea516b2b5b01370902be8f5ca24377a1ab4d
 		
 		
 		
