@@ -2,7 +2,22 @@
 <html>
 <head>
 	<title>Partner</title>
+	<link rel="stylesheet" href="add_weightage_style.css">
+	<style>
+	table
+	{
+	width:80%;
+	height:80%;
+	}
+	tr,td
+	{
+	width:15%;
+	height:25%;
+	padding:5px;
+	cellspacing:4px;
 	
+	}
+	</style>
 </head>
 <body>
 <?php include 'navbar.php';?>
@@ -46,9 +61,7 @@ else
 	{
 		//echo "data entered successsfully";
 		?>
-		<script type="text/javascript">
-		window.alert("Data Enterd Successfully");
-		</script>
+		
 		
 	<?php  
 		
@@ -71,12 +84,15 @@ else
 <br>
 <br>
 <div id="factor_wrap">
-	Partner Name :-<br><br> <input type="text" name="partner_name" value=""><br><br><br>
-	Password :- <br><br> <input type="password" name="partner_password" value=""><br><br><br>
-	Credits  :- <br><br> <input type="range" name="partner_credits" min="0" max="10" value="0" oninput="amount12.value=partner_credits.value" class="form-control">
-<output name="amount12" for="partner_credits">0 </output><br><br><br>
-	Area :- <br><br> <input type="text" name="partner_area" value=""><br><br><br>
-		<input type="submit" name="submit" value="Enter"><br>
+<table border="1" >
+	<tr><td>Partner Name :-</td> <td><input type="text" name="partner_name" value=""></td></tr>
+	
+	
+	<tr><td>Password :- </td> <td><input type="password" name="partner_password" value=""></td></tr>
+	<tr><td>Credits  :-</td><td>  <input type="range" name="partner_credits" min="0" max="10" value="0" oninput="amount12.value=partner_credits.value" class="form-control"></td></tr>
+<tr><td></td><td><output name="amount12" for="partner_credits">0 </output></td></tr>
+	<tr colspan="2"><td>Area :- </td> <td><input type="text" name="partner_area" value=""></td></tr>
+		<tr><td></td><td><input type="submit" name="submit" value="Enter"></td></tr>
 </div>
 </center>
 </div>

@@ -20,13 +20,13 @@ if(isset($_POST['pd_submit']))
 {
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = 'code4good';
+$dbpass = '';
 
 $name1 =  ($_POST['pd_name']);
    $pwd2 =  ($_POST['pd_password']);
    //$pwd2 =  ($_POST['password2']);
    //echo $uid;
-   print "hi";
+   
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 if(! $conn )
 {
@@ -51,10 +51,7 @@ if(!$retval1) {
 	
 
     else{?>
-	<script>
-   window.alert("print");   //echo "hii";
-   //exit();
-   </script>
+	
 	
       <?php print "successfully logged into system.";
 header('Location: http://localhost/cfg/algorithm.php');

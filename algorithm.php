@@ -15,7 +15,7 @@
 <?php 
 error_reporting(0);
 $username = "root";
-$password = "code4good";
+$password = "";
 $hostname = "localhost"; 
 
 //connection to the database
