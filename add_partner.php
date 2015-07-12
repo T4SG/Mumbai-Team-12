@@ -67,7 +67,8 @@ else
 <div id="factor_wrap">
 	Partner Name :-<br><br> <input type="text" name="partner_name" value=""><br><br><br>
 	Password :- <br><br> <input type="password" name="partner_password" value=""><br><br><br>
-	Credits  :- <br><br> <input type="text" name="partner_credits" value=""><br><br><br>
+	Credits  :- <br><br> <input type="range" name="partner_credits" min="0" max="10" value="0" oninput="amount12.value=partner_credits.value" class="form-control">
+<output name="amount12" for="partner_credits">0 </output><br><br><br>
 	Area :- <br><br> <input type="text" name="partner_area" value=""><br><br><br>
 		<input type="submit" name="submit" value="Enter"><br>
 </div>
