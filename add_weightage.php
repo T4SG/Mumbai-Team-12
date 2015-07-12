@@ -91,16 +91,16 @@ Future maintenance :-<br><br>
 <output name="amount4" for="rd_fut_mt">0 </output>
 <br><br><br>
 Disaster resistance :-<br><br>
-<input type="range" name="rd_dis_r" min="0" max="10" value="0" oninput="amount4.value=rd_dis_r.value" class="form-control">
-<output name="amount4" for="rd_dis_r">0 </output>
+<input type="range" name="rd_dis_r" min="0" max="10" value="0" oninput="amount5.value=rd_dis_r.value" class="form-control">
+<output name="amount5" for="rd_dis_r">0 </output>
 <br><br><br>
 Principal Co-operation :-<br><br>
-<input type="range" name="rd_prin_c" min="0" max="10" value="0" oninput="amount4.value=rd_prin_c.value" class="form-control">
-<output name="amount4" for="rd_prin_c">0 </output>
+<input type="range" name="rd_prin_c" min="0" max="10" value="0" oninput="amount6.value=rd_prin_c.value" class="form-control">
+<output name="amount6" for="rd_prin_c">0 </output>
 <br><br><br>
 Computer reliabilty :-<br><br>
-<input type="range" name="rd_comp_r" min="0" max="10" value="0" oninput="amount4.value=rd_comp_r.value" class="form-control">
-<output name="amount4" for="rd_comp_r">0 </output>
+<input type="range" name="rd_comp_r" min="0" max="10" value="0" oninput="amount7.value=rd_comp_r.value" class="form-control">
+<output name="amount7" for="rd_comp_r">0 </output>
 <br><br><br>
 <centre><input id="fin" type="submit" name="submit" value="Rank Schools" class="btn btn-default"></centre>
 </form>
