@@ -1,0 +1,62 @@
+
+#addpartner{
+	font-size: 25px;
+	float: right;
+	position: relative;
+	right: 50px;
+	top: 50px;
+	border-radius: 25px;
+   padding: 20px;
+   width: 25%;
+	}
+  #h1{
+    position: relative;
+    left: 100px;
+    padding-right: 250px;
+  }
+
+.factor{
+	position: relative;
+	top: 35px;
+	text-align: center;
+	left: 35px;
+}	
+
+#buffer{
+	position: relative;
+	top: 50px;
+
+}
+#container_w{
+	background-color: #CCCCFF;
+	width: 75%;
+	height: wrap_content;
+	text-align: center;
+	position: relative;
+	top: 100px;
+
+
+}
+
+#factor_wrap{
+	position: relative;
+	font-size: 25px;
+	text-align: left;
+	padding-left: 25px;
+}
+
+#fin{
+	font-size: 25px;
+	float: right;
+	position: relative;
+	right: 40%;
+	top: 50px;
+	border-radius: 25px;
+   padding: 20px;
+   width: 25%;
+   bottom: 20px;
+   padding-bottom: 20px;
+
+
+
+}

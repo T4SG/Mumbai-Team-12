@@ -4,9 +4,7 @@
 	<title>Weightage</title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="add_weightage_style.css">
 </head>
 <body>
 
@@ -60,39 +58,62 @@ mysql_close($conn);
 else
 {
    ?>
-   
+
+<div id="header">  <button type="button" align="right" id="addpartner">Add a new partner</button></div>
+ <div style="float:none"></div>  
 <form name="weightage" method="post" action="<?php $_PHP_SELF ?>" role="form">
 
 <br><br>
 
-Weightage:- 
+<center>
+<div id="container_w" >
+<div class ="factor"><h1>Weightage<h1> </div>
 <br>
-Impact on the number of children :-
-<input type="text" name="rd_impact_ch" class="form-control">
 <br>
-Damage proportion of the building :-
-<input type="text" name="rd_damage_prop" >
 <br>
-Community participation :-
-<input type="text" name="rd_com_part" >
-<br>
-Future maintenance :-
-<input type="text" name="rd_fut_mt" >
-<br>
-Disaster resistance :-
-<input type="text" name="rd_dis_r" >
-<br>
-Principal Co-operation :-
-<input type="text" name="rd_prin_c" >
-<br>
-Computer reliabilty :-
-<input type="text" name="rd_comp_r" >
-<br>
-<input type="submit" name="submit" value="Enter" class="btn btn-default">
+
+<div id="factor_wrap">
+Impact on the number of children :-<br><br>
+
+
+<input type="range" name="rd_impact_ch" min="0" max="10" value="0" oninput="amount1.value=rd_impact_ch.value" class="form-control">
+<output name="amount1" for="rd_impact_ch">0 </output>  <br><br><br>
+Damage proportion of the building :-<br><br>
+<input type="range" name="rd_damage_prop" min="0" max="10" value="0" oninput="amount2.value=rd_damage_prop.value" class="form-control">
+<output name="amount2" for="rd_damage_prop">0 </output>
+<br><br><br>
+Community participation :-<br><br>
+<input type="range" name="rd_com_part" min="0" max="10" value="0" oninput="amount3.value=rd_com_part.value" class="form-control">
+<output name="amount3" for="rd_com_part">0 </output>
+<br><br><br>
+Future maintenance :-<br><br>
+<input type="range" name="rd_fut_mt" min="0" max="10" value="0" oninput="amount4.value=rd_fut_mt.value" class="form-control">
+<output name="amount4" for="rd_fut_mt">0 </output>
+<br><br><br>
+Disaster resistance :-<br><br>
+<input type="range" name="rd_dis_r" min="0" max="10" value="0" oninput="amount4.value=rd_dis_r.value" class="form-control">
+<output name="amount4" for="rd_dis_r">0 </output>
+<br><br><br>
+Principal Co-operation :-<br><br>
+<input type="range" name="rd_prin_c" min="0" max="10" value="0" oninput="amount4.value=rd_prin_c.value" class="form-control">
+<output name="amount4" for="rd_prin_c">0 </output>
+<br><br><br>
+Computer reliabilty :-<br><br>
+<input type="range" name="rd_comp_r" min="0" max="10" value="0" oninput="amount4.value=rd_comp_r.value" class="form-control">
+<output name="amount4" for="rd_comp_r">0 </output>
+<br><br><br>
+<centre><input id="fin" type="submit" name="submit" value="Rank Schools" class="btn btn-default"></centre>
 </form>
 
+</div>
+</div>
+</center>
 <?php
 }
 ?>
+  <script language="javascript" type="text/javascript" src="add_weightage.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="jquery.js"></script>
 </body>
 </html>
